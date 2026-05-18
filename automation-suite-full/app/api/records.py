@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+
 from app.db.repositories import create_record, list_records
 from app.db.session import get_db
 from app.schemas import RecordCreate

@@ -1,10 +1,11 @@
 from fastapi import FastAPI
-from app.api import auth, records, jobs, search, health
-from app.dashboard.views import router as dashboard_router
+
+from app.api import auth, health, jobs, records, search
+from app.automation.scheduler import start_scheduler
 from app.core.logging import setup_logging
+from app.dashboard.views import router as dashboard_router
 from app.db.base import Base
 from app.db.session import engine
-from app.automation.scheduler import start_scheduler
 
 setup_logging()
 Base.metadata.create_all(bind=engine)

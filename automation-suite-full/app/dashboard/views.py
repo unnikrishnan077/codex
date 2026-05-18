@@ -7,4 +7,6 @@ templates = Jinja2Templates(directory="app/dashboard/templates")
 
 @router.get("/dashboard")
 def dashboard(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "title": "Automation Suite"})
+    return templates.TemplateResponse(
+        "index.html", {"request": request, "title": "Automation Suite"}
+    )

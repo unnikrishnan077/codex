@@ -1,4 +1,4 @@
-from .user import User
-from .record import Record
-from .job import Job
 from .embedding import Embedding
+from .job import Job
+from .record import Record
+from .user import User

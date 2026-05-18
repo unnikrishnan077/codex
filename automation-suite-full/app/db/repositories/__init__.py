@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
-from app.db.models import Record, User, Job
+
+from app.db.models import Job, Record, User
 
 
 def create_user(db: Session, email: str, password_hash: str) -> User:

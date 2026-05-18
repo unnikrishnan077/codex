@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta, timezone
+
 from jose import jwt
 from passlib.context import CryptContext
+
 from app.core.config import settings
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -15,5 +17,9 @@ def verify_password(plain: str, hashed: str) -> bool:
 
 
 def create_access_token(subject: str) -> str:
-    exp = datetime.now(timezone.utc) + timedelta(minutes=settings.access_token_expire_minutes)
-    return jwt.encode({"sub": subject, "exp": exp}, settings.secret_key, algorithm=settings.algorithm)
+    exp = datetime.now(timezone.utc) + timedelta(
+        minutes=settings.access_token_expire_minutes
+    )
+    return jwt.encode(
+        {"sub": subject, "exp": exp}, settings.secret_key, algorithm=settings.algorithm
+    )

@@ -1,4 +1,5 @@
 import numpy as np
+
 from app.embeddings.encoder import encode
 
 

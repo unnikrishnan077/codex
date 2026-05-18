@@ -7,7 +7,9 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
     database_url: str = "sqlite:///./automation.db"
-    postgres_url: str = "postgresql+psycopg://postgres:postgres@localhost:5432/automation"
+    postgres_url: str = (
+        "postgresql+psycopg://postgres:postgres@localhost:5432/automation"
+    )
     use_postgres: bool = False
     vector_index_path: str = "./faiss.index"
     vector_meta_path: str = "./faiss_meta.npy"
